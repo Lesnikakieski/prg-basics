@@ -5,6 +5,11 @@ balance = 1000  # Initial balance
 pin = '1111' # initial 4-digit PIN code
 
 while True:
+    pincheck=input("Give yer pin mate: ")
+    if pincheck != pin:
+        break
+        
+    print()
     print()
     print("ATM Menu:")
     print("1. Check balance")
@@ -14,7 +19,6 @@ while True:
 
     choice = input("Choose an option (1-4): ")
     print()
-
     if choice == '1':
         print(f"Your current balance is: €{balance}")
     elif choice == '2':
@@ -33,3 +37,11 @@ while True:
         break  # Exit the loop
     else:
         print("Invalid option. Please try again.")
+
+
+'''
+The atm.py program simulates a simple ATM where the user can deposit, withdraw, or check the balance. Analyze the program code and then run the program. Next, add two more functions to the program:
+
+Check PIN
+Change PIN
+The PIN should consist of exactly 4 digits. To check if a string contains only digits, you can use the isdigit() method. This method returns True if all characters in the string are digits and False otherwise:'''
