@@ -1,19 +1,57 @@
-###
-# Calculates the final grade for a test based
-# on the number of points obtained
+####
+# Draws each of the figures (square, triangle, rectangle) twice,
+# in different locations
 #
-def pts_to_grade(points):
-    grade = ''
-    if points >= 18:
-        grade = 'Excellent'
-    elif points >=14:
-        grade = "Good"
-    elif points >=10:
-        grade = "Satisfactory"
-    elif points <= grade:
-        grade = "Fail"
-    return grade
+import figures
+import turtle
 
-test_result = 15
-final_grade = pts_to_grade(test_result)
-print(f'You scored {test_result} points on the test. Your final grade is {final_grade}')
+# Set up the screen
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+# Create the turtle
+pen = turtle.Turtle()
+pen.speed(5)
+
+## Draw figures
+
+# 1. Pierwszy zestaw figur
+
+# kwadrat w środku
+figures.draw_square(pen, 80)
+
+# trójkąt w lewym górnym rogu
+pen.penup()
+pen.goto(-100, 100)
+pen.pendown()
+figures.draw_triangle(pen, 80)
+
+# prostokąt w prawym górnym rogu
+pen.penup()
+pen.goto(100, 100)
+pen.pendown()
+figures.draw_rectangle(pen, 120, 60)
+
+# 2. Drugi zestaw figur (w innych miejscach)
+
+# kwadrat na dole po lewej
+pen.penup()
+pen.goto(-150, -100)
+pen.pendown()
+figures.draw_square(pen, 60)
+
+# trójkąt na dole po środku
+pen.penup()
+pen.goto(0, -100)
+pen.pendown()
+figures.draw_triangle(pen, 60)
+
+# prostokąt na dole po prawej
+pen.penup()
+pen.goto(150, -100)
+pen.pendown()
+figures.draw_rectangle(pen, 80, 40)
+
+# Hide the turtle and finish
+pen.hideturtle()
+window.mainloop()
