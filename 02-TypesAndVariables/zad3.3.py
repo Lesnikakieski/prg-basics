@@ -10,6 +10,6 @@ print("Before swapping: x=", x, "y=", y)
 z=x
 x=y
 y=z
-...
+
 
 print("After swapping: x=", x, "y=", y)
